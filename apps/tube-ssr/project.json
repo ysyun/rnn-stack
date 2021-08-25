@@ -1,0 +1,52 @@
+{
+  "root": "apps/tube-ssr",
+  "sourceRoot": "apps/tube-ssr",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "root": "apps/tube-ssr",
+        "outputPath": "dist/apps/tube-ssr"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "tube-ssr:build",
+        "dev": true,
+        "port": 4300
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "tube-ssr:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "tube-ssr:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/tube-ssr"],
+      "options": {
+        "jestConfig": "apps/tube-ssr/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/tube-ssr/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

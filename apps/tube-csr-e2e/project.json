@@ -1,0 +1,26 @@
+{
+  "root": "apps/tube-csr-e2e",
+  "sourceRoot": "apps/tube-csr-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/tube-csr-e2e/cypress.json",
+        "tsConfig": "apps/tube-csr-e2e/tsconfig.e2e.json",
+        "devServerTarget": "tube-csr:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "tube-csr:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/tube-csr-e2e/**/*.{js,ts}"]
+      }
+    }
+  }
+}

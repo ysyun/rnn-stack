@@ -27,12 +27,22 @@
     ]
   },
   "projects": {
+    "tube-api": {
+      "tags": []
+    },
     "tube-csr": {
       "tags": []
     },
     "tube-csr-e2e": {
       "tags": [],
       "implicitDependencies": ["tube-csr"]
+    },
+    "tube-ssr": {
+      "tags": []
+    },
+    "tube-ssr-e2e": {
+      "tags": [],
+      "implicitDependencies": ["tube-ssr"]
     }
   }
 }
