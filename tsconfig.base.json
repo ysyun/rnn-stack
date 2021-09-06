@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@rnn-stack/api": ["libs/api/src/index.ts"],
       "@rnn-stack/core": ["libs/core/src/index.ts"]
     }
   },

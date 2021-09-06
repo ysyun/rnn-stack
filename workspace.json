@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "libs/api",
     "core": "libs/core",
     "tube-api": "apps/tube-api",
     "tube-csr": "apps/tube-csr",

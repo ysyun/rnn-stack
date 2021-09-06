@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Button from 'antd/es/button';
-import Divider from 'antd/es/divider';
-import Dropdown from 'antd/es/dropdown';
-import Menu from 'antd/es/menu';
-import message from 'antd/es/message';
+import { Button, Divider, Dropdown, Menu, message } from 'antd';
 
 import styles from './app.module.scss';
 import DogList from './dog';

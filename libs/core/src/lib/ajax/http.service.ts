@@ -71,7 +71,7 @@ export class HttpService {
     });
   }
 
-  cancel(forcely = false): void {
+  abort(forcely = false): void {
     if (!this.completed || forcely) {
       this.cancelTokenSource.cancel(`${this.options.url} is aborted`);
     }
@@ -115,7 +115,7 @@ export class HttpService {
           observer.next(response.data);
         })
         .catch((error: AxiosError | Error) => {
-          this.cancel();
+          this.abort();
           observer.error(error);
           if (axios.isAxiosError(error)) {
             console.log(error.code);
@@ -132,6 +132,7 @@ export class HttpService {
           this.completed = true;
           observer.complete();
         });
+      return () => this.abort();
     });
   }
 }
