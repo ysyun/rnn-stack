@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@rnn-stack/api": ["libs/api/src/index.ts"],
-      "@rnn-stack/core": ["libs/core/src/index.ts"]
+      "@rnn-stack/core": ["libs/core/src/index.ts"],
+      "@rnn-stack/state": ["libs/state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

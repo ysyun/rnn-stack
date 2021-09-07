@@ -3,6 +3,7 @@
   "projects": {
     "api": "libs/api",
     "core": "libs/core",
+    "state": "libs/state",
     "tube-api": "apps/tube-api",
     "tube-csr": "apps/tube-csr",
     "tube-csr-e2e": "apps/tube-csr-e2e",

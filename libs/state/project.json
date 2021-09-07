@@ -1,0 +1,22 @@
+{
+  "root": "libs/state",
+  "sourceRoot": "libs/state/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/state/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/state"],
+      "options": {
+        "jestConfig": "libs/state/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

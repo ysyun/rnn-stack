@@ -4,7 +4,7 @@ import { List } from 'antd';
 // import Axios, { AxiosResponse } from 'axios';
 
 // import { httpService } from '@rnn-stack/core';
-import { useDogList } from '@rnn-stack/api';
+import { useDogState } from '@rnn-stack/state';
 
 function DogList() {
   // const [dogList, setDogList] = useState<string[]>([]);
@@ -15,9 +15,9 @@ function DogList() {
   // });
   // }, []);
 
-  const { isLoading, data, error } = useDogList();
+  const [isLoading, dog, error] = useDogState();
 
-  if (isLoading || !data) {
+  if (isLoading || !dog) {
     return <span>loading...</span>;
   }
 
@@ -30,7 +30,7 @@ function DogList() {
       header={<div>Header</div>}
       footer={<div>Footer</div>}
       bordered
-      dataSource={data.message}
+      dataSource={dog}
       renderItem={(item: string) => <List.Item>{item}</List.Item>}
     />
   );
